@@ -12,6 +12,6 @@ export default function SearchWithLocation() {
   }
   // Search with your location 
   return (
-    <button type='submit' className='searchLocationBtn' onClick={() => navigator.geolocation.getCurrentPosition(showPosition)}><FaSearchLocation /></button>
+    <button type='submit' className='searchLocationBtn' onClick={() => navigator.geolocation.getCurrentPosition(showPosition)}><span className='findLocationText'>Find your location</span><FaSearchLocation /></button>
   )
 }

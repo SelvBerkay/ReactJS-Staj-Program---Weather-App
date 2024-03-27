@@ -133,10 +133,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 4px;
 }
 
 .searchLocationBtn:hover {
   background-color: #3B3B54;
+}
+
+.findLocationText {
+  font-size: 12px;
 }
 
 
