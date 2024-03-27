@@ -6,6 +6,12 @@
 
 ![Application Responsive](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/cb4168a8-c56b-400a-9d5a-bfbedf986530)
 
+## Projenin demo linki
+
+```
+[link](https://bsweatherappreactjsstajprogram.netlify.app/)
+```
+
 ## Projenin amacı 
 
 **Bu proje ReactJS staj programı için oluşturulmuştur. Proje kullanıcıların şehirlerinin güncel, 5 günlük ve 3'er saatlik hava durumlarını görmelerini sağlar. Aynı zamanda kullanıcılar farklı şehirlerin de hava durumlarını görüntüleyebilirler.**
