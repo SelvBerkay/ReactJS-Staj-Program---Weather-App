@@ -32,7 +32,7 @@ export default function Form() {
             <div className="data" style={values.city === "" ? { display: "none" } : { display: "block" }}>
               {
                 values.city === "" ? <></> :
-                  cities.filter(city => city.includes(values.city) && city).map((item, i) => <p className='dataItem' onClick={() => dispatch(fetchWeatherWithCityName(item))} key={i} value={item}>{item}</p>)
+                  cities.filter(city => city.includes(values.city[0].toUpperCase() + values.city.slice(1).toLowerCase()) && city).map((item, i) => <p className='dataItem' onClick={() => dispatch(fetchWeatherWithCityName(item))} key={i} value={item}>{item}</p>)
               }
             </div>
             {
