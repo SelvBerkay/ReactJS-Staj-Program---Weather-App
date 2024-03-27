@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios';
-const APIKEY = process.env.VITE_OPENWWEATHERMAP_API_KEY
+const APIKEY = import.meta.env.VITE_OPENWWEATHERMAP_API_KEY
 
 export const fetchWeatherWithCityName = createAsyncThunk("fetchWeatherWithCityName", async (cityName) => {
   const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKEY}&units=metric`)
