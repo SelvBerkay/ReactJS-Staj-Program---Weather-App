@@ -8,9 +8,8 @@
 
 ## Projenin demo linki
 
-```
-[link](https://bsweatherappreactjsstajprogram.netlify.app/)
-```
+**https://bsweatherappreactjsstajprogram.netlify.app/**
+
 
 ## Projenin amacı 
 
