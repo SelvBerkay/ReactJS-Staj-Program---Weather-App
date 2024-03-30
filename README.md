@@ -13,7 +13,7 @@
 
 ## Projenin amacı 
 
-**Bu proje ReactJS staj programı için oluşturulmuştur. Proje kullanıcıların şehirlerinin güncel, 5 günlük ve 3'er saatlik hava durumlarını görmelerini sağlar. Aynı zamanda kullanıcılar farklı şehirlerin de hava durumlarını görüntüleyebilirler.**
+**Bu proje ReactJS staj programı için oluşturulmuştur. Proje kullanıcıların şehirlerinin güncel, 5 günlük ve 3'er saatlik hava durumlarını görmelerini sağlar. Aynı zamanda kullanıcılar farklı şehirlerin de hava durumlarını görüntüleyebilirler.Responsive bir sitedir.**
 
 
 ## Projede kullanılan teknolojiler
