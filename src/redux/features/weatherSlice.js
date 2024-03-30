@@ -49,7 +49,7 @@ const weatherSlice = createSlice({
       state.isError = true
       state.isLoading = false
       if (action.error.message === "Request failed with status code 404") {
-        state.errorMsg = "You have entered an incorrect city name. Please try again."
+        state.errorMsg = "You have entered a wrong city name. Please try again."
       } else if (action.error.message === "Request failed with status code 429") {
         state.errorMsg = "You've made too many requests recently. Please wait and try your request again later."
       } else {
