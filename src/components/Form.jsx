@@ -28,21 +28,23 @@ export default function Form() {
           <form onSubmit={handleSubmit} className='form'>
             {errors.city && <h5 className='errmsg'>{errors.city}</h5>}
             <Error isError={weather.isError} msg={weather.errorMsg} />
-            <input autoComplete='off' type="text" className='search mb-15' placeholder='Search location' id='city' name='city' onChange={handleChange} values={values.city} />
+            <div className='searchInputDiv mb-15'>
+              <input autoComplete='off' type="text" className='search' placeholder='Search location' id='city' name='city' onChange={handleChange} values={values.city} />
+              {
+                weather.isLoading && <Loading />
+              }
+            </div>
             <div className="data" style={values.city === "" ? { display: "none" } : { display: "block" }}>
               {
                 values.city === "" ? <></> :
                   cities.filter(city => city.includes(values.city[0].toUpperCase() + values.city.slice(1).toLowerCase()) && city).map((item, i) => <p className='dataItem' onClick={() => dispatch(fetchWeatherWithCityName(item))} key={i} value={item}>{item}</p>)
               }
             </div>
-            {
-              weather.isLoading && <Loading />
-            }
           </form>
         )
         }
       </Formik >
-      <SearchWithLocation/>
+      <SearchWithLocation />
     </>
   )
 }

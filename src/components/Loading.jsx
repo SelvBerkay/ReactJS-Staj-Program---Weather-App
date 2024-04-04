@@ -1,9 +1,7 @@
 import React from 'react'
-import FadeLoader from "react-spinners/FadeLoader";
+import LoadingIcon from "../images/Loading.svg"
 export default function Loading() {
   return (
-    <FadeLoader 
-      color='#8FB2F5'
-    />
+    <img src={LoadingIcon} alt="Loading" className='loadingIcon' />
   )
 }
