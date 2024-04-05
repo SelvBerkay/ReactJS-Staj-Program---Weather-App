@@ -226,6 +226,12 @@
   border-radius: 8px;
 }
 
+
+.countryFlag {
+  width: 24px;
+  height: 24px;
+}
+
 .temp {
   font-size: 48px;
   font-weight: 800;

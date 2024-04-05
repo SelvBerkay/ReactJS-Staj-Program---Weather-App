@@ -8,6 +8,7 @@ export default function CurrentWeather() {
   const data = useSelector((state) => state.weather.data)
   const cityName = useSelector((state) => state.weather.name)
   const country = useSelector((state) => state.weather.country);
+  const countryFlag = `https://flagsapi.com/${country}/flat/64.png`
   const temp = data.main.temp;
   const temp_max = Math.round(data.main.temp_max);
   const temp_min = Math.round(data.main.temp_min);
@@ -19,7 +20,7 @@ export default function CurrentWeather() {
   return (
     <div className="currentWeather" style={{ backgroundImage: `url(${bg.url})` }}>
       <div className="location">
-        <h3>{cityName}, {country}</h3>
+        <h3>{cityName}, {country}, <img src={countryFlag} alt="flag" className='countryFlag' /></h3>
         <p>{getDate()}</p>
       </div>
       <div className="tempDetail">
