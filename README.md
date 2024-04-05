@@ -25,7 +25,7 @@
 
 ## Projede kullanılan teknolojiler
 
-**Bu projede axios, redux toolkit, formik, yup, react spinners ve react icons paketleri kullanılmıştır.**
+**Bu projede axios, redux toolkit, formik, yup ve react icons paketleri kullanılmıştır.**
 
 
 ## Projenin kurulumu 
