@@ -10,8 +10,7 @@ export default function SearchWithLocation() {
     const coordinats = [lat, lon]
     dispatch(fetchWeatherWithLatLon(coordinats))
   }
-  // Search with your location 
   return (
-    <button type='submit' className='searchLocationBtn' onClick={() => navigator.geolocation.getCurrentPosition(showPosition)}><span className='findLocationText'>Find your location</span><FaSearchLocation /></button>
+    <FaSearchLocation size={24} color='#8FB2F5' style={{cursor : "pointer"}} onClick={() => navigator.geolocation.getCurrentPosition(showPosition)} />
   )
 }

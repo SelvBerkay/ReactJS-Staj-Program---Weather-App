@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import CurrentWeather from './CurrentWeather'
-import WeatherDetails from './WeatherDetails'
-import Form from './Form'
-import NextDayWeather from './NextDayWeather'
-import HourlyWeather from './HourlyWeather'
+import CurrentWeather from '../components/Weather/CurrentWeather'
+import WeatherDetails from '../components/Weather/WeatherDetails'
+import Form from '../components/Form'
+import NextDayWeather from '../components/Weather/NextDayWeather'
+import HourlyWeather from '../components/Weather/HourlyWeather'
 
 
 export default function WeatherCard() {

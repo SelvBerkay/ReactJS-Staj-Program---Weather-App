@@ -90,6 +90,13 @@
   color: #7F7F98;
 }
 
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
 .loadingIcon {
   animation: spin 2s linear infinite;
 }
@@ -141,37 +148,6 @@
 
 
 /* Form */
-
-/* Search With Location Components */
-
-.searchLocationBtn {
-  width: 48%;
-  height: 56px;
-  padding: 0 20px 0 20px;
-  background-color: #1E1E29;
-  border-radius: 8px;
-  border: 1px solid #1E1E29;
-  color: #FAFAFA;
-  font-size: 30px;
-  font-weight: 400;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-}
-
-.searchLocationBtn:hover {
-  background-color: #3B3B54;
-}
-
-.findLocationText {
-  font-size: 12px;
-}
-
-
-/* Search With Location Components */
-
 
 /* Weather Card */
 

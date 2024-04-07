@@ -6,15 +6,20 @@ import Loading from './Loading';
 import Error from './Error';
 import SearchWithLocation from './SearchWithLocation';
 import citiesJson from "../cities/city.list.json"
-
+import { useNavigate } from "react-router-dom"
+import { useEffect } from 'react';
+import { FaSearch } from "react-icons/fa";
 export default function Form() {
-
+  const navigate = useNavigate();
   const dispatch = useDispatch()
   const weather = useSelector((state) => state.weather)
   const cities = citiesJson.map(city => city.name)
   const validationSchema = Yup.object({
     city: Yup.string().required("Please enter a city name"),
   });
+  useEffect(() => {
+    weather.isLoaded && navigate(`/${weather.name}`)
+  }, [weather.isLoaded])
   return (
     <>
       <Formik
@@ -30,9 +35,13 @@ export default function Form() {
             <Error isError={weather.isError} msg={weather.errorMsg} />
             <div className='searchInputDiv mb-15'>
               <input autoComplete='off' type="text" className='search' placeholder='Search location' id='city' name='city' onChange={handleChange} values={values.city} />
-              {
-                weather.isLoading && <Loading />
-              }
+              <div className="icons">
+                <FaSearch size={24} color='#8FB2F5' style={{ cursor: "pointer" }} onClick={handleSubmit} />
+                <SearchWithLocation />
+                {
+                  weather.isLoading && <Loading />
+                }
+              </div>
             </div>
             <div className="data" style={values.city === "" ? { display: "none" } : { display: "block" }}>
               {
@@ -44,7 +53,6 @@ export default function Form() {
         )
         }
       </Formik >
-      <SearchWithLocation />
     </>
   )
 }

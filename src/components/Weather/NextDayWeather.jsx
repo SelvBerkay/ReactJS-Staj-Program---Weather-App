@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux'
 import NextDayCard from './NextDayCard'
 
 export default function NextDayWeather() {
-  const nextDays = useSelector((state) => state.weather.nextDaysData)
-  const pod = useSelector((state) => state.weather.pod)
+  const {nextDaysData, pod} = useSelector((state) => state.weather)
   const getDayName = (number) => {
     let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const dt = new Date();
@@ -16,11 +15,11 @@ export default function NextDayWeather() {
     }
   }
 
-  const nextDay = { data: nextDays[0], day: getDayName(1) }
-  const twoDay = { data: nextDays[1], day: getDayName(2) }
-  const threeDay = { data: nextDays[2], day: getDayName(3) }
-  const fourDay = { data: nextDays[3], day: getDayName(4) }
-  const fiveDay = { data: nextDays[4], day: getDayName(5) }
+  const nextDay = { data: nextDaysData[0], day: getDayName(1) }
+  const twoDay = { data: nextDaysData[1], day: getDayName(2) }
+  const threeDay = { data: nextDaysData[2], day: getDayName(3) }
+  const fourDay = { data: nextDaysData[3], day: getDayName(4) }
+  const fiveDay = { data: nextDaysData[4], day: getDayName(5) }
   const daysArr = [nextDay, twoDay, threeDay, fourDay, fiveDay]
 
 

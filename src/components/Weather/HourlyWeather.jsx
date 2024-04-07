@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import HourlyCard from './HourlyCard'
-import { getHourWithTimeZone } from '../utils/getTimeZone'
+import { getHourWithTimeZone } from '../../utils/getTimeZone'
 export default function HourlyWeather() {
   const { hourlyData, timezone } = useSelector((state) => state.weather)
   const formattedHourlyData = (data) => {

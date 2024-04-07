@@ -1,20 +1,24 @@
 import './css/app.css'
-import { useSelector } from "react-redux"
-import WeatherCard from "./components/WeatherCard"
-import Home from "./components/Home"
+import WeatherCard from "./pages/WeatherCard"
+import Home from "./pages/Home"
 import Logo from "./components/Logo"
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import PrivateRoutes from './privateRoutes/PrivateRoutes';
 function App() {
-  const isLoaded = useSelector((state) => state.weather.isLoaded)
-  
   return (
-    <>
-      <div className='container'>
-        <Logo/>
-        {
-          isLoaded ? <WeatherCard /> : <Home/>
-        }   
-      </div>
-    </>
+    <div className="container">
+      <Router>
+        <Logo />
+        <Routes>
+          <Route exact path="*" element={<Home />} />
+          <Route path="/:cityName" element={<PrivateRoutes><WeatherCard /></PrivateRoutes>} />
+        </Routes>
+      </Router>
+    </div>
   )
 }
 

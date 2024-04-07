@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
-import icons from '../images/icon'
+import icons from '../../images/icon'
 export default function WeatherDetails() {
-  const data = useSelector((state) => state.weather.data)
+  const {data} = useSelector((state) => state.weather)
   const detail = [
     {
       name: "Thermal sensation",

@@ -1,5 +1,5 @@
 import React from 'react'
-import findIcon from '../utils/findIcon'
+import findIcon from '../../utils/findIcon'
 
 export default function NextDayCard({max,min,main,day,pod}) {
   const iconUrl = findIcon(pod, main)

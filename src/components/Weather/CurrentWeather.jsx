@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import findBG from '../utils/findBackground';
-import findIcon from '../utils/findIcon';
-import { getFullTimeZone } from '../utils/getTimeZone';
+import findBG from '../../utils/findBackground';
+import findIcon from '../../utils/findIcon';
+import { getFullTimeZone } from '../../utils/getTimeZone';
 
 export default function CurrentWeather() {
   const weatherData = useSelector((state) => state.weather)

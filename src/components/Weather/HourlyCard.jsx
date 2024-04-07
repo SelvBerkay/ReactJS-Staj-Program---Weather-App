@@ -1,5 +1,5 @@
 import React from 'react'
-import findIcon from '../utils/findIcon'
+import findIcon from '../../utils/findIcon'
 
 export default function HourlyCard({max,min,main,hour,pod}) {
   const iconUrl = findIcon(pod, main)
