@@ -1,14 +1,12 @@
 # WEATHER APP CURRENT/5 DAYS/3 HOURS
 
-![Search](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/2283dba8-0ce2-49cb-8648-de88bcdd5cac)
+![Search](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/02ca403a-bdd8-4212-857b-4230e428deae)
 
+![Result](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/2eb601b2-cf4c-490a-ae96-e82c877182d0)
 
-![Result](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/4491ac8a-a7d8-4322-8241-c73768378cc6)
+![Search Responsive](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/e03d6404-45d2-44d9-b75e-ed32058892d6)
 
-
-![Search Responsive](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/cb4168a8-c56b-400a-9d5a-bfbedf986530)
-
-![Result Responsive](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/44eded6b-3c4b-4e07-9192-ffbca4de170f)
+![Result Responsive](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/95f043fa-5b73-49d4-8935-51eb7dd5c907)
 
 
 ## Projenin demo linki
@@ -22,11 +20,17 @@
 
 + Kullanıcılar güncel lokasyonlarını kullanarak şehirlerinin günlük, 5 günlük ve 3'er saatlik hava durumlarını görebilirler.
 + Kullanıcılar aynı zamanda arama yaparak farklı şehirlerdeki hava durumlarını da görüntüleyebilirler.
++ Kullanıcılar eğer siteden bir şehrin hava durumuna bakarken çıkarsa siteye tekrar girdiğinde aynı verileri görüntüleyebilir.
 
 ## Projede kullanılan teknolojiler
 
-**Bu projede axios, redux toolkit, formik, yup ve react icons paketleri kullanılmıştır.**
-
++ React Icons
++ React Router Dom
++ React Redux
++ Redux Persist
++ Axios
++ Formik
++ Yup
 
 ## Projenin kurulumu 
 
