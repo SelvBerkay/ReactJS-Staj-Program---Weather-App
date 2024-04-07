@@ -5,7 +5,7 @@ export default function WeatherDetails() {
   const detail = [
     {
       name: "Thermal sensation",
-      value: `${Math.round(data.main.feels_like)}ºc`,
+      value: `${Math.trunc(data.feels_like.day)}ºc`,
       icon: icons.thermometer
     },
     {
@@ -15,13 +15,18 @@ export default function WeatherDetails() {
     },
     {
       name: "Wind speed",
-      value: `${data.wind.speed} km/h`,
+      value: `${data.wind_speed} km/h`,
       icon: icons.wind
     },
     {
       name: "Air humidity",
-      value: `${data.main.humidity}%`,
+      value: `${data.humidity}%`,
       icon: icons.drop
+    },
+    {
+      name: "UV index",
+      value: `${data.uvi}`,
+      icon: icons.sun
     }
   ]
   return (
