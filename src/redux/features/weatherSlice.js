@@ -8,13 +8,14 @@ async function fetchDataWithCityName(cityName) {
   const hourly = response.data.list
   const {city : {name, country, coord : {lat, lon}}} = data
   const {sys : {pod}} = hourly[0]
-  const {daily} = await fetchForecastData(lat, lon)
+  const {daily, timezone} = await fetchForecastData(lat, lon)
   return {
     name,
     country,
     pod,
     daily,
     hourly,
+    timezone
   }
 }
 
@@ -24,45 +25,49 @@ async function fetchDataWithLatLon(coordinats) {
   const hourly = response.data.list
   const {city : {name, country}} = data
   const {sys : {pod}} = hourly[0]
-  const {daily} = await fetchForecastData(coordinats[0], coordinats[1])
+  const {daily, timezone} = await fetchForecastData(coordinats[0], coordinats[1])
   return {
     name,
     country,
     pod,
     daily,
     hourly,
+    timezone
   }
 }
 
 async function fetchForecastData(lat, lon) {
   const response = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=current%2C+minutely%2C+alerts&units=metric&appid=${APIKEY}`)
   const data = response.data
-  const {daily} = data
+  const {daily,timezone} = data
   return {
-    daily
+    daily,
+    timezone
   }
 }
 
 export const fetchWeatherWithCityName = createAsyncThunk("fetchWeatherWithCityName", async (cityName) => {
-  const {name, country, pod, daily,hourly} = await fetchDataWithCityName(cityName)
+  const {name, country, pod, daily,hourly,timezone} = await fetchDataWithCityName(cityName)
   return {
     name,
     country,
     pod,
     daily,
-    hourly
+    hourly,
+    timezone
   }
 })
 
 
 export const fetchWeatherWithLatLon = createAsyncThunk("fetchWeatherWithLatLon", async (coordinats) => {
-  const {name, country, pod, daily,hourly} = await fetchDataWithLatLon(coordinats)
+  const {name,country,pod,daily,hourly,timezone} = await fetchDataWithLatLon(coordinats)
   return {
     name,
     country,
     pod,
     daily,
-    hourly
+    hourly,
+    timezone
   }
 }) 
 
@@ -77,6 +82,7 @@ const initialState = {
   errorMsg: "",
   isLoaded: false,
   pod : null,
+  timezone : ""
 }
 
 const weatherSlice = createSlice({
@@ -96,6 +102,7 @@ const weatherSlice = createSlice({
       state.pod = action.payload.pod
       state.nextDaysData = action.payload.daily.slice(1, 6)
       state.hourlyData = action.payload.hourly.slice(1, 6)
+      state.timezone = action.payload.timezone
       state.isLoading = false
       state.isLoaded = true
       state.isError = false
@@ -122,6 +129,7 @@ const weatherSlice = createSlice({
       state.pod = action.payload.pod
       state.nextDaysData = action.payload.daily.slice(1, 6)
       state.hourlyData = action.payload.hourly.slice(1, 6)
+      state.timezone = action.payload.timezone
       state.isLoading = false
       state.isLoaded = true
       state.isError = false
