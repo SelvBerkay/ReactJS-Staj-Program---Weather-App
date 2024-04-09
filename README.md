@@ -1,13 +1,6 @@
 # WEATHER APP CURRENT/5 DAYS/3 HOURS
 
-![Search](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/02ca403a-bdd8-4212-857b-4230e428deae)
-
-![Result](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/2eb601b2-cf4c-490a-ae96-e82c877182d0)
-
-![Search Responsive](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/e03d6404-45d2-44d9-b75e-ed32058892d6)
-
-![Result Responsive](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/95f043fa-5b73-49d4-8935-51eb7dd5c907)
-
+![Design](https://github.com/SelvBerkay/ReactJS-Staj-Program---Weather-App/assets/137525654/70aa3206-0408-40e1-bd6c-7fd89d339c46)
 
 ## Projenin demo linki
 
@@ -20,7 +13,8 @@
 
 + Kullanıcılar güncel lokasyonlarını kullanarak şehirlerinin günlük, 5 günlük ve 3'er saatlik hava durumlarını görebilirler.
 + Kullanıcılar aynı zamanda arama yaparak farklı şehirlerdeki hava durumlarını da görüntüleyebilirler.
-+ Kullanıcılar eğer siteden bir şehrin hava durumuna bakarken çıkarsa siteye tekrar girdiğinde aynı verileri görüntüleyebilir.
++ Kullanıcılar favorilere şehirleri ekleyebilir ve favorilerden eklediği şehirleri görebilir.
++ Kullanıcıların favorilere eklediği şehirler ve en son baktığı şehir localStorage ile saklanır.
 
 ## Projede kullanılan teknolojiler
 
