@@ -88,7 +88,8 @@ const initialState = {
   errorMsg: "",
   isLoaded: false,
   pod: null,
-  timezone: ""
+  timezone: "",
+  favorites : [],
 }
 
 const weatherSlice = createSlice({
@@ -107,6 +108,12 @@ const weatherSlice = createSlice({
         state.isLoaded = false,
         state.pod = null,
         state.timezone = ""
+    },
+    addCityToFavorites: (state) => {
+      state.favorites.push(state.name)
+    },
+    removeCityToFavorites: (state, action) => {
+      state.favorites = state.favorites.filter(fav => fav !== action.payload)
     }
   },
   extraReducers: (builder) => {
@@ -116,7 +123,8 @@ const weatherSlice = createSlice({
       state.isLoaded = false
     })
     builder.addCase(fetchWeatherWithCityName.fulfilled, (state, action) => {
-      state.name = action.payload.name
+      const cityName = action.payload.name.replace("Province", "").trim()
+      state.name = cityName
       state.country = action.payload.country
       state.data = action.payload.daily[0]
       state.pod = action.payload.pod
@@ -146,7 +154,8 @@ const weatherSlice = createSlice({
       state.isLoaded = false
     })
     builder.addCase(fetchWeatherWithLatLon.fulfilled, (state, action) => {
-      state.name = action.payload.name
+      const cityName = action.payload.name.replace("Province", "").trim()
+      state.name = cityName
       state.country = action.payload.country
       state.data = action.payload.daily[0]
       state.pod = action.payload.pod
@@ -174,5 +183,5 @@ const weatherSlice = createSlice({
   }
 })
 
-export const { resetState } = weatherSlice.actions
+export const { resetState, getIsFav, addCityToFavorites, removeCityToFavorites } = weatherSlice.actions
 export default weatherSlice.reducer

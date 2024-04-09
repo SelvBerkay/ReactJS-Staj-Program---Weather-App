@@ -1,19 +1,31 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import findBG from '../../utils/findBackground';
 import findIcon from '../../utils/findIcon';
 import { getFullTimeZone } from '../../utils/getTimeZone';
-
+import { addCityToFavorites, removeCityToFavorites } from '../../redux/features/weatherSlice';
+import { MdBookmarkRemove, MdBookmarkAdd } from "react-icons/md";
 export default function CurrentWeather() {
   const weatherData = useSelector((state) => state.weather)
-  const {data, pod, name, country, timezone} = weatherData
+  const {data, pod, name, country, timezone, favorites} = weatherData
   const {temp : {day, max, min}, weather : [{description, main}]} = data
   const countryFlag = `https://flagsapi.com/${country}/flat/64.png`
+  const dispatch = useDispatch();
   return (
     <div className="currentWeather" style={{ backgroundImage: `url(${findBG(pod,description)})` }}>
       <div className="location">
         <h3>{name}, {country}, <img src={countryFlag} alt="flag" className='countryFlag' /></h3>
         <p>{getFullTimeZone(timezone)}</p>
+        {
+          favorites.includes(name) ?
+            <p className='favoritesHandle removeFavorite' onClick={() => dispatch(removeCityToFavorites(name))}>
+              Remove Favorites <MdBookmarkRemove />
+            </p>
+            :
+            <p className='favoritesHandle addFavorite' onClick={() => dispatch(addCityToFavorites())} >
+              Add Favorites <MdBookmarkAdd />
+            </p>
+        }
       </div>
       <div className="tempDetail">
         <div>

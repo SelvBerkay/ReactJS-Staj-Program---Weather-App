@@ -11,6 +11,6 @@ export default function SearchWithLocation() {
     dispatch(fetchWeatherWithLatLon(coordinats))
   }
   return (
-    <FaSearchLocation size={24} color='#8FB2F5' style={{cursor : "pointer"}} onClick={() => navigator.geolocation.getCurrentPosition(showPosition)} />
+    <FaSearchLocation size={24} color='#8FB2F5' className='searchIcon' onClick={() => navigator.geolocation.getCurrentPosition(showPosition)} />
   )
 }

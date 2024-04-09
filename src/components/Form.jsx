@@ -36,7 +36,7 @@ export default function Form() {
             <div className='searchInputDiv mb-15'>
               <input autoComplete='off' type="text" className='search' placeholder='Search location' id='city' name='city' onChange={handleChange} values={values.city} />
               <div className="icons">
-                <FaSearch size={24} color='#8FB2F5' style={{ cursor: "pointer" }} onClick={handleSubmit} />
+                <FaSearch size={24} color='#8FB2F5' className='searchIcon' onClick={handleSubmit} />
                 <SearchWithLocation />
                 {
                   weather.isLoading && <Loading />
